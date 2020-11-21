@@ -12,6 +12,7 @@ public class TelaRecomendacoes extends javax.swing.JFrame {
         //inicia a janela no meio da tela
         this.setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setTitle("Recomendações");
     }
 
     

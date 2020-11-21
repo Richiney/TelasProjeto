@@ -1,6 +1,10 @@
 
 package telas;
 
+import javax.swing.JOptionPane;
+import sistemaDeRecomendacao.ConnectionFactory;
+import sistemaDeRecomendacao.Usuario;
+
 
 public class TelaLogin extends javax.swing.JFrame {
 
@@ -11,6 +15,7 @@ public class TelaLogin extends javax.swing.JFrame {
         this.setResizable(false);
         //inicia a janela no meio da tela
         this.setLocationRelativeTo(null);
+        setTitle("Tela login");
     }
 
     
@@ -122,6 +127,22 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtEntrarActionPerformed
+        //pega login do usuario
+        String login=CampoInserirUsuario.getText();
+        //pega a senha e converte para string
+        String senha=new String (CampoInserirSenha.getPassword());
+        
+        String bdSenha =  ConnectionFactory . pegarSenha (login);
+         if (senha.equals(bdSenha)) {
+              JOptionPane.showMessageDialog(null, "Bem vindo,"+ login);
+    		Usuario usuario =  new  Usuario (login, senha);
+    		TelaPrincipal telaPrincipal =  new  TelaPrincipal();
+    		telaPrincipal.setVisible ( true );
+    		dispose();
+    	} 
+         else {
+    		JOptionPane . showMessageDialog ( null , " Usuário inválido " );
+    	}   
         
     }//GEN-LAST:event_BtEntrarActionPerformed
 

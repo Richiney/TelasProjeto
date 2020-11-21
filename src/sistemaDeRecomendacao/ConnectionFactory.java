@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class ConnectionFactory {
 	private String usuario = "root";
-	private String senha = "";
+	private String senha = "richiney@500";
 	private String host = "127.0.0.1";
 	private String porta = "3306";
 	private String bd = "bd_projeto";

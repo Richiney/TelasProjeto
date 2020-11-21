@@ -13,6 +13,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.setResizable(false);
         //inicia a janela no meio da tela
         this.setLocationRelativeTo(null);
+        setTitle("Tela principal");
     }
 
    
